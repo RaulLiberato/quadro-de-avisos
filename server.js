@@ -2,6 +2,9 @@
 const express = require('express')
 const bosyParser = require('body-parser')
 
+//importando as rotas do avisos
+const rauterAvisos = require('./components/avisos/AvisosController')
+
 //inicializando o express
 const app = express();
 
@@ -16,9 +19,7 @@ app.use(bosyParser.urlencoded({extended:false}))
 app.use(bosyParser.jason())
 
 //rotas
-app.get("/",(req,res)=>{
-    res.send("VAI ETIM!!!")
-})
+app.use(routerAvisos)
 
 //configuração da porta
 app.listen(3000)
