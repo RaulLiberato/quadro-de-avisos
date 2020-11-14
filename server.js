@@ -1,9 +1,9 @@
 //importar o express
 const express = require('express')
-const bosyParser = require('body-parser')
+const bodyParser = require('body-parser')
 
 //importando as rotas do avisos
-const rauterAvisos = require('./components/avisos/AvisosController')
+const routerAvisos = require('./components/avisos/AvisosController')
 
 //inicializando o express
 const app = express();
@@ -15,8 +15,8 @@ app.set('view engine','ejs')
 app.use(express.static('public'))
 
 //configurar o body-parser
-app.use(bosyParser.urlencoded({extended:false}))
-app.use(bosyParser.jason())
+app.use(bodyParser.urlencoded({extended:false}))
+app.use(bodyParser.json())
 
 //rotas
 app.use(routerAvisos)
