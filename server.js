@@ -14,6 +14,9 @@ app.set('view engine','ejs')
 //configurar a pasta public
 app.use(express.static('public'))
 
+//configurando o moment
+app.locals.moment = require("moment")
+
 //configurar o body-parser
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
